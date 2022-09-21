@@ -61,7 +61,7 @@ resource "oci_core_instance" "ubuntu_oci_instance" {
     subnet_id                 = oci_core_subnet.default_oci_core_subnet.id
   }
 
-  display_name = "nginx-vm"
+  display_name = "OCI-${var.region}"
 
   instance_options {
     are_legacy_imds_endpoints_disabled = false
