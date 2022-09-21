@@ -7,7 +7,7 @@ output "vcn_id" {
 }
 
 output "public_subnet_id" {
-  value = oci_core_subnet.default_oci_core_subnet10.id
+  value = oci_core_subnet.default_oci_core_subnet.id
 }
 
 output "security_list_id" {
@@ -15,5 +15,5 @@ output "security_list_id" {
 }
 
 output "public_subnet_cidr" {
-  value = oci_core_subnet.default_oci_core_subnet10.cidr_block
+  value = oci_core_subnet.default_oci_core_subnet.cidr_block
 }
