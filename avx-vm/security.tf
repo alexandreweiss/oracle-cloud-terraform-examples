@@ -34,4 +34,17 @@ resource "oci_core_default_security_list" "default_security_list" {
 
     description = "Allow all from vcn subnet"
   }
+
+  ingress_security_rules {
+    protocol = 6 # tcp
+    source   = ${var.my_public_ip_cidr}
+
+    description = "Allow HTTP from ${var.my_public_ip_cidr}"
+
+    tcp_options {
+      min = 80
+      max = 80
+    }
+  }
+  
 }
