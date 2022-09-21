@@ -37,7 +37,7 @@ variable "availability_domain" {
 
 variable "PATH_TO_PUBLIC_KEY" {
   type        = string
-  default     = "../../ssh/oci-id_key.pem"
+  default     = "../../ssh/oci-id_rsa_pub_sshrsa.pem"
   description = "OCI public key"
 }
 
