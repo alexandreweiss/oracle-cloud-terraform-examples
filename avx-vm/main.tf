@@ -15,6 +15,23 @@ resource "oci_core_subnet" "default_oci_core_subnet" {
   security_list_ids = [oci_core_default_security_list.default_security_list.id]
 }
 
+resource "oci_core_internet_gateway" "default_oci_core_internet_gateway" {
+  compartment_id = var.compartment_ocid
+  display_name   = "Internet Gateway Default OCI core vcn"
+  enabled        = "true"
+  vcn_id         = oci_core_vcn.default_oci_core_vcn.id
+  freeform_tags  = local.tags
+}
+
+resource "oci_core_default_route_table" "default_oci_core_default_route_table" {
+  route_rules {
+    destination       = "0.0.0.0/0"
+    destination_type  = "CIDR_BLOCK"
+    network_entity_id = oci_core_internet_gateway.default_oci_core_internet_gateway.id
+  }
+  manage_default_resource_id = oci_core_vcn.default_oci_core_vcn.default_route_table_id
+}
+
 resource "oci_core_instance" "ubuntu_oci_instance" {
   agent_config {
     is_management_disabled = "false"
