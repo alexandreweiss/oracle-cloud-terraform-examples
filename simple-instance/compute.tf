@@ -33,7 +33,7 @@ resource "oci_core_instance" "ubuntu_oci_instance" {
     subnet_id                 = var.is_private == true ? var.private_subnet_id : var.public_subnet_id
   }
 
-  display_name = "Ubuntu Instance"
+  display_name = "Lamp Instance"
 
   instance_options {
     are_legacy_imds_endpoints_disabled = false
@@ -46,9 +46,9 @@ resource "oci_core_instance" "ubuntu_oci_instance" {
     "user_data"           = data.template_cloudinit_config.ubuntu_init.rendered
   }
 
-  shape = "VM.Standard.A1.Flex"
+  shape = "VM.Standard.E3.Flex"
   shape_config {
-    memory_in_gbs = "6"
+    memory_in_gbs = "2"
     ocpus         = "1"
   }
 

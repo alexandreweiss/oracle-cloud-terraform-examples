@@ -1,9 +1,9 @@
 variable "compartment_ocid" {
-
+  default = "ocid1.compartment.oc1..aaaaaaaa2ph2o3lwq5lq6qdsxdub4jqum25fj6h3uv3v5vxipjcdxkh2xhcq"
 }
 
 variable "region" {
-
+  default = "eu-marseille-1"
 }
 
 variable "fault_domains" {
@@ -12,15 +12,15 @@ variable "fault_domains" {
 }
 
 variable "oci_core_vcn_cidr" {
-  default = "10.0.0.0/16"
-}
-
-variable "oci_core_subnet_cidr10" {
   default = "10.0.0.0/24"
 }
 
+variable "oci_core_subnet_cidr10" {
+  default = "10.0.0.0/28"
+}
+
 variable "oci_core_subnet_cidr11" {
-  default = "10.0.1.0/24"
+  default = "10.0.0.16/28"
 }
 
 variable "oci_core_vcn_dns_label" {
@@ -38,8 +38,10 @@ variable "oci_core_subnet_dns_label11" {
 variable "my_public_ip_cidr" {
   type        = string
   description = "My public ip CIDR"
+  default = "90.45.75.202/32"
 }
 
 variable "environment" {
   type = string
+  default = "dev"
 }
