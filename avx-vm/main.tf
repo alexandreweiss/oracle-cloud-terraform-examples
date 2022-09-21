@@ -74,7 +74,7 @@ resource "oci_core_instance" "ubuntu_oci_instance" {
     "user_data"           = data.template_cloudinit_config.ubuntu_init.rendered
   }
 
-  shape = "VM.Standard.E3.Flex"
+  shape = "VM.Standard.A1.Flex"
   shape_config {
     memory_in_gbs = "2"
     ocpus         = "1"
