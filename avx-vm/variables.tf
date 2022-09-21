@@ -3,6 +3,7 @@ variable "compartment_ocid" {
 }
 
 variable "region" {
+  default = "eu-marseille-1"
 }
 
 variable "fault_domains" {
@@ -33,6 +34,7 @@ variable "my_public_ip_cidr" {
 }
 
 variable "availability_domain" {
+  default = "Qmuz:EU-MARSEILLE-1-AD-1"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
@@ -51,5 +53,5 @@ variable "default_fault_domain" {
 }
 
 variable "os_image_id" {
-  default = "ocid1.image.oc1.eu-marseille-1.aaaaaaaalgmsx4yvo3ras7bksgcupn3nkh54cxp4z36tho4uomi5jcovi2yq" # Canonical-Ubuntu-20.04-aarch64-2022.01.18-0
+  default = "ocid1.image.oc1.eu-marseille-1.aaaaaaaaijgva33hzhjnquvxauj7v2u3ky4pxxiqvzh26nkqmp2u572ek4dq" # Canonical-Ubuntu-20.04-aarch64-2022.01.18-0
 }
