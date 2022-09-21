@@ -48,15 +48,6 @@ variable "is_private" {
   default = false
 }
 
-variable "public_subnet_id" {
-  type = string
-  default = "ocid1.subnet.oc1.eu-marseille-1.aaaaaaaaf5behhm3aen37ysp6ty4mia52bxdekp4cy6ru7f2zyd6ygnonzfq"
-}
-
-variable "private_subnet_id" {
-  type = string
-}
-
 variable "default_fault_domain" {
   default = "FAULT-DOMAIN-1"
 }

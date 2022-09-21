@@ -42,7 +42,7 @@ resource "oci_core_instance" "ubuntu_oci_instance" {
   create_vnic_details {
     assign_private_dns_record = true
     assign_public_ip          = var.is_private == true ? false : true
-    subnet_id                 = var.is_private == true ? var.private_subnet_id : var.public_subnet_id
+    subnet_id                 = oci_core_subnet.default_oci_core_subnet.id
   }
 
   display_name = "nginx-vm"
