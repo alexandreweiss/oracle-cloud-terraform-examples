@@ -3,7 +3,6 @@ variable "compartment_ocid" {
 }
 
 variable "region" {
-  default = "eu-marseille-1"
 }
 
 variable "fault_domains" {
@@ -34,7 +33,6 @@ variable "my_public_ip_cidr" {
 }
 
 variable "availability_domain" {
-  default = "eu-marseille-1-ad-1"
 }
 
 variable "PATH_TO_PUBLIC_KEY" {
