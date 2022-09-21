@@ -20,7 +20,6 @@ resource "oci_core_internet_gateway" "default_oci_core_internet_gateway" {
   display_name   = "Internet Gateway Default OCI core vcn"
   enabled        = "true"
   vcn_id         = oci_core_vcn.default_oci_core_vcn.id
-  freeform_tags  = local.tags
 }
 
 resource "oci_core_default_route_table" "default_oci_core_default_route_table" {
